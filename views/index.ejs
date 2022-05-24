@@ -1,0 +1,46 @@
+
+<!-- include header -->
+    <%- include('include/_header') %>
+<!-- /include header -->
+
+
+    <!-- Main Site -->
+    <main id="site-main">
+        <div class="container">
+            <!-- form handling -->
+            <form action="/admin" method="POST">
+                <table class="table table-dark">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>City</th>
+                            <th>Email</th>
+                            <!--<th>sorting</th>-->
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%- include('include/_show') %>
+                    </tbody>
+                    <thead class="thead-dark">
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <!--<th>sorting</th>-->
+                        <th></th>
+                    </tr>
+                    </thead>
+                </table>
+            </form>
+        </div>
+        <div class="container">
+            <a href="/admin/add-user" class="btn border-shadow update blue-white-icon">
+                <span class="text-gradient">Add new user </span>
+            </a>
+        </div>
+    </main>
+
+<%- include('include/_footer') %>

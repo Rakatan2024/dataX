@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="Css/registration1.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign in</title>
+</head>
+<body>
+
+<form id="log-form" >
+    <div class="container">
+        <h1>Sign in</h1>
+        <p>Please fill this form to enter to your account</p>
+        <hr>
+
+        <label for="nameBox"><b>Login</b></label>
+        <input type="password" placeholder="Enter name" name="name" id="nameBox" required>
+        <label for="pswBox"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" id="pswBox" required>
+        <button onclick="logIn()" type="submit" class="registerbtn">Sign in</button>
+    </div>
+
+    <div class="container signin">
+
+        <p>Still do not have an acccount? <a href="Registrtion Form.html">Register</a>.</p>
+    </div>
+</form>
+
+<script>
+    const form = document.getElementById('log-form')
+    form.addEventListener('submit', loginUser)
+    async function loginUser(event) {
+        event.preventDefault()
+        const name = document.getElementById('nameBox').value
+        const password = document.getElementById('pswBox').value
+        const result = await fetch('/api/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name,
+                password
+            })
+        }).then((res) => res.json())
+        if (result.status === 'ok') {
+            window.location = "index.html"
+
+        } else if(result.status === 'adminok') {
+            window.location = '/admin'
+
+        }else {
+            alert(result.error)
+        }
+    }
+</script>
+
+</body>
+</html>
