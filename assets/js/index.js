@@ -17,7 +17,7 @@ $("#update_user").submit(function(event){
 
 
     var request = {
-        "url" : `http://localhost:3000/admin/api/users/${data.id}`,
+        "url" : `https://boiling-island-12959.herokuapp.com/admin/api/users/${data.id}`,
         "method" : "PUT",
         "data" : data
     }
@@ -34,7 +34,7 @@ if(window.location.pathname === "/admin"){
         var id = $(this).attr("data-id")
 
         var request = {
-            "url" : `http://localhost:3000/admin/api/users/${id}`,
+            "url" : `https://boiling-island-12959.herokuapp.com/admin/api/users/${id}`,
             "method" : "DELETE"
         }
 
