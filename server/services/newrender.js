@@ -3,7 +3,7 @@ const axios = require('axios');
 
 exports.shomeRoutes = (req, res) => {
     // Make a get request to /api/users
-    axios.get('https://evening-retreat-93314.herokuapp.com/newstar/api/stars')
+    axios.get('https://boiling-island-12959.herokuapp.com/newstar/api/stars')
         .then(function(response){
             res.render('newsindex', { stars : response.data });
         })
@@ -17,7 +17,7 @@ exports.add_star = (req, res) =>{
 }
 
 exports.update_star = (req, res) =>{
-    axios.get('https://evening-retreat-93314.herokuapp.com/newstar/api/stars', { params : { id : req.query.id }})
+    axios.get('https://boiling-island-12959.herokuapp.com/newstar/api/stars', { params : { id : req.query.id }})
         .then(function(stardata){
             res.render("update_star", { star : stardata.data})
         })
