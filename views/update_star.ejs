@@ -1,0 +1,67 @@
+
+<!-- include header -->
+<%- include('include/_header') %>
+<!-- /include header -->
+<link rel="stylesheet" href="css/style.css">
+<!-- Main Site -->
+<main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between">
+            <div class="filter">
+                <a href="/star"><i class="fas fa-angle-double-left"></i> All Stars</a>
+            </div>
+        </div>
+        <div class="form-title text-center">
+            <h2 class="text-dark">Update star</h2>
+            <span class="text-light">Use the below form to Update an account</span>
+        </div>
+
+        <!-- add user form -->
+        <!-- form handling -->
+        <form method="POST" id="update_star">
+            <div class="new_user">
+                <div class="form-group">
+                    <label for="name" class="text-light">Name</label>
+                    <input type="hidden" name="id" value="<%= star._id %>">
+                    <label>
+                        <input type="text" name="name" value="<%= star.name %>" placeholder="Enter your name">
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="city" class="text-light">Type</label>
+                    <label>
+                        <input type="text" name="city" value="<%= star.type%>" placeholder="City where you located">
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="Email" class="text-light">Age</label>
+                    <label>
+                        <input type="text" name="email" value="<%= star.age%>" placeholder="example@gmail.com">
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label for="Password" class="text-light">Radius</label>
+                    <label>
+                        <input type="text" name="password" value="<%= star.radius%>" placeholder="password">
+                    </label>
+                </div>
+                <label for="Password" class="text-light">Price</label>
+                <label>
+                    <input type="text" name="password" value="<%= star.price%>" placeholder="password">
+                </label>
+            </div>
+
+
+                <div class="form-group">
+                    <button type="submit" class="btn text-dark update">Save</button>
+                </div>
+        </form>
+
+    </div>
+</main>
+<!-- /Main Site -->
+
+<!-- include footer -->
+<%- include('include/_footer') %>
+<!-- /include footer -->
