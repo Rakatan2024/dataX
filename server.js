@@ -23,5 +23,6 @@ app.use('/js', express.static(path.resolve(__dirname, "assets/js")))
 app.use('/', express.static(path.resolve(__dirname, "web")))
 app.use('/admin', require('./server/routes/router'))
 app.use('/api', require('./server/routes/regrouter'))
-
+app.use('/star', require('./server/routes/srouter'))
+app.use('/newstar', require('./server/routes/newrouter'))
 app.listen(PORT, ()=> { console.log(`Server is running on http://localhost:${PORT}`)});
