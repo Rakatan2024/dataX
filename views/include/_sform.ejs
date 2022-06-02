@@ -1,0 +1,36 @@
+<!-- form handling -->
+<link rel="stylesheet" href="assets/css/style.css">
+<form action="/star/api/stars" method="POST" id="add_star">
+    <div class="new_user">
+        <div class="form-group">
+            <input type="hidden" name="id">
+            <label>
+                <input type="text" name="name" placeholder="Name">
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                <input type="text" name="type" placeholder="Type">
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                <input type="text" name="age" placeholder="Age">
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                <input type="text" name="radius" placeholder="radius">
+            </label>
+            <div class="form-group">
+                <label>
+                    <input type="text" name="price" placeholder="Price">
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn text-dark update">Save</button>
+        </div>
+
+    </div>
+</form>

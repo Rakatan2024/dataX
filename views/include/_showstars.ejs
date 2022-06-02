@@ -1,0 +1,17 @@
+<% for(var i = 0; i < stars.length; i++) { %>
+    <tr>
+        <td><%= i + 1 %></td>
+        <td><%= stars[i].name %></td>
+        <td><%= stars[i].type %></td>
+        <td><%= stars[i].radius %></td>
+        <td><%= stars[i].price %></td>
+        <td>
+            <a href="/star/update-star?id=<%= stars[i]._id%>" class="btn border-shadow update blue-white-icon">
+                Edit
+            </a>
+            <a class="btn border-shadow delete red-white-icon" data-id=<%= stars[i]._id%> >
+                Delete
+            </a>
+        </td>
+    </tr>
+<% } %>
